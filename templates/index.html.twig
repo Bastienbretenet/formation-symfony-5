@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Homepage!{% endblock %}
+
+{% block body %}
+
+<h1 class="text-center">Nos produits phares</h1>
+<div class="row">
+    {% for i in 1..3 %}
+        <div class="col">
+            <div class="card">
+                <img src="https://picsum.photos/200/200" alt="Image Produit" class="img-fluid">
+                <div class="card-body">
+                    <h4 class="card-title">Titre du produit</h4>
+                    <p class="card-text">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem, sit.
+                    </p>
+                    <a href="#" class="btn btn-primary">Détail</a>
+                    <a href="#" class="btn btn-success">Ajouter au panier</a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+<hr>
+
+<h2>Un service incroyable</h2>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis explicabo maxime nobis nesciunt commodi labore, velit laborum officiis nemo et!</p>
+
+<div class="row">
+    {% include "shared/assurance.html.twig" with {
+        color : 'primary',
+        icon : 'fas fa-truck',
+        text : 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel, debitis?'
+    } %}
+    {% include "shared/assurance.html.twig" with {
+        color : 'success',
+        icon : 'fas fa-check',
+        text : 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel, debitis?'
+    } %}
+    {% include "shared/assurance.html.twig" with {
+        color : 'warning',
+        icon : 'fas fa-lock',
+        text : 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vel, debitis?'
+    } %}
+</div>
+
+{% endblock %}
