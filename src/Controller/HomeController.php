@@ -14,11 +14,14 @@ class HomeController extends AbstractController
     /**
      * @Route("/", name="homepage")
      */
-    public function homepage(EntityManagerInterface $em): Response
+    public function homepage(ProductRepository $productRepository): Response
     {
-        $productRepository = $em->getRepository(Product::class);
+        $products = $productRepository->findBy([], [], 3);
+
+        dump('test');
 
         return $this->render('index.html.twig', [
+            "products" => $products
         ]);
     }
 }
