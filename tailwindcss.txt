@@ -1,0 +1,1 @@
+npm install -D tailwindcss postcss-loader purgecss-webpack-plugin glob-all path autoprefixer
